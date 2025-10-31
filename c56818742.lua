@@ -1,6 +1,5 @@
 --超越竜エグザラプトル
 local s,id,o=GetID()
----@param c Card
 function s.initial_effect(c)
 	c:EnableReviveLimit()
 	--material
@@ -24,6 +23,7 @@ function s.initial_effect(c)
 	e2:SetProperty(EFFECT_FLAG_CANNOT_DISABLE)
 	e2:SetCondition(s.drcon)
 	e2:SetOperation(s.regop)
+	c:RegisterEffect(e2)
 	local e3=e2:Clone()
 	e3:SetCode(EVENT_TO_GRAVE)
 	e3:SetCondition(s.regcon)

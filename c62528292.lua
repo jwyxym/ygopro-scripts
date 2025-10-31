@@ -1,5 +1,4 @@
 --戦華史略－東南之風
----@param c Card
 function c62528292.initial_effect(c)
 	--activate
 	local e0=Effect.CreateEffect(c)
@@ -45,7 +44,6 @@ function c62528292.target(e,tp,eg,ep,ev,re,r,rp,chk)
 	c:SetTurnCounter(0)
 	c:RegisterEffect(e1)
 end
-c62528292.toss_coin=true
 function c62528292.stgcon(e,tp,eg,ep,ev,re,r,rp)
 	return Duel.GetTurnPlayer()==tp
 end

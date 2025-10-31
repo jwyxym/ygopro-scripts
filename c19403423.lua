@@ -1,5 +1,4 @@
 --時を裂く魔瞳
----@param c Card
 function c19403423.initial_effect(c)
 	--Activate
 	local e1=Effect.CreateEffect(c)
@@ -28,8 +27,9 @@ end
 function c19403423.activate(e,tp,eg,ep,ev,re,r,rp)
 	local c=e:GetHandler()
 	local e1=Effect.CreateEffect(c)
+	e1:SetDescription(aux.Stringid(19403423,2))
 	e1:SetType(EFFECT_TYPE_FIELD)
-	e1:SetProperty(EFFECT_FLAG_PLAYER_TARGET)
+	e1:SetProperty(EFFECT_FLAG_PLAYER_TARGET+EFFECT_FLAG_CLIENT_HINT)
 	e1:SetCode(EFFECT_CANNOT_ACTIVATE)
 	e1:SetTargetRange(1,0)
 	e1:SetValue(c19403423.aclimit)

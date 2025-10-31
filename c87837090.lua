@@ -1,6 +1,5 @@
---Kuibelt the Blade Dragon
+--帯刃龍 カイベルト
 local s,id,o=GetID()
----@param c Card
 function s.initial_effect(c)
 	c:EnableReviveLimit()
 	--material

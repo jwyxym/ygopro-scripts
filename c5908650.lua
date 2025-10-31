@@ -1,5 +1,4 @@
 --幻奏の音姫ローリイット・フランソワ
----@param c Card
 function c5908650.initial_effect(c)
 	--to hand
 	local e1=Effect.CreateEffect(c)
@@ -10,6 +9,7 @@ function c5908650.initial_effect(c)
 	e1:SetProperty(EFFECT_FLAG_CARD_TARGET)
 	e1:SetCountLimit(1)
 	e1:SetCost(c5908650.thcost)
+	e1:SetCondition(c5908650.thcon)
 	e1:SetTarget(c5908650.thtg)
 	e1:SetOperation(c5908650.thop)
 	c:RegisterEffect(e1)
@@ -29,6 +29,9 @@ function c5908650.thcost(e,tp,eg,ep,ev,re,r,rp,chk)
 	e1:SetValue(c5908650.aclimit)
 	e1:SetReset(RESET_PHASE+PHASE_END)
 	Duel.RegisterEffect(e1,tp)
+end
+function c5908650.thcon(e,tp,eg,ep,ev,re,r,rp)
+	return e:GetHandler():IsAttribute(ATTRIBUTE_LIGHT)
 end
 function c5908650.aclimit(e,re,tp)
 	return re:IsActiveType(TYPE_MONSTER) and re:GetHandler():IsNonAttribute(ATTRIBUTE_LIGHT)

@@ -1,5 +1,4 @@
 --法の聖典
----@param c Card
 function c458748.initial_effect(c)
 	--Activate
 	local e1=Effect.CreateEffect(c)
@@ -13,7 +12,6 @@ function c458748.initial_effect(c)
 	e1:SetOperation(c458748.activate)
 	c:RegisterEffect(e1)
 end
-c458748.fusion_effect=true
 function c458748.cost(e,tp,eg,ep,ev,re,r,rp,chk)
 	e:SetLabel(100)
 	return true

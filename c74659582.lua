@@ -1,10 +1,9 @@
 --神碑の鬣スレイプニル
 local s,id,o=GetID()
----@param c Card
 function s.initial_effect(c)
 	c:EnableReviveLimit()
 	--material
-	aux.AddFusionProcFunRep(c,aux.FilterBoolFunction(Card.IsSetCard,0x17f),2,true)
+	aux.AddFusionProcFunRep(c,aux.FilterBoolFunction(Card.IsFusionSetCard,0x17f),2,true)
 	--remove
 	local e1=Effect.CreateEffect(c)
 	e1:SetDescription(aux.Stringid(id,0))

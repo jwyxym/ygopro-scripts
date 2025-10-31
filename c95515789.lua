@@ -1,6 +1,5 @@
 --赫の聖女カルテシア
 local s,id,o=GetID()
----@param c Card
 function s.initial_effect(c)
 	aux.AddCodeList(c,68468459)
 	--spsummon
@@ -45,7 +44,6 @@ function s.initial_effect(c)
 		Duel.RegisterEffect(ge1,0)
 	end
 end
-s.fusion_effect=true
 function s.spcfilter(c)
 	return c:IsCode(68468459) and (c:IsFaceup() or c:IsLocation(LOCATION_GRAVE))
 end

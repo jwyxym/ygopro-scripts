@@ -1,5 +1,4 @@
 --Uk－P.U.N.K.娑楽斎
----@param c Card
 function c13258285.initial_effect(c)
 	--fusion summon
 	local e1=Effect.CreateEffect(c)
@@ -27,7 +26,6 @@ function c13258285.initial_effect(c)
 	e2:SetOperation(c13258285.scop)
 	c:RegisterEffect(e2)
 end
-c13258285.fusion_effect=true
 function c13258285.spcost(e,tp,eg,ep,ev,re,r,rp,chk)
 	if chk==0 then return Duel.CheckLPCost(tp,600) end
 	Duel.PayLPCost(tp,600)

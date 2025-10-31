@@ -1,5 +1,4 @@
 --ファイナル・クロス
----@param c Card
 function c35756798.initial_effect(c)
 	--Activate
 	local e1=Effect.CreateEffect(c)
@@ -14,7 +13,7 @@ function c35756798.initial_effect(c)
 	c:RegisterEffect(e1)
 	if not c35756798.global_check then
 		c35756798.global_check=true
-		local ge1=Effect.GlobalEffect()
+		local ge1=Effect.CreateEffect(c)
 		ge1:SetType(EFFECT_TYPE_FIELD+EFFECT_TYPE_CONTINUOUS)
 		ge1:SetCode(EVENT_TO_GRAVE)
 		ge1:SetCondition(c35756798.checkcon)

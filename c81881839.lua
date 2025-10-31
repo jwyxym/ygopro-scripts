@@ -1,5 +1,4 @@
 --二重露光
----@param c Card
 function c81881839.initial_effect(c)
 	--Activate
 	local e1=Effect.CreateEffect(c)
@@ -35,7 +34,7 @@ function c81881839.fselect(g)
 	return g:GetClassCount(Card.GetCode)==1
 end
 function c81881839.lvtg(e,tp,eg,ep,ev,re,r,rp,chk,chkc)
-	local g=Duel.GetMatchingGroup(c81881839.lvfilter,tp,LOCATION_MZONE,0,nil,e)
+	local g=Duel.GetMatchingGroup(c81881839.lvfilter,tp,LOCATION_MZONE,LOCATION_MZONE,nil,e)
 	if chkc then return false end
 	if chk==0 then return g:CheckSubGroup(c81881839.fselect,2,2) end
 	Duel.Hint(HINT_SELECTMSG,tp,HINTMSG_FACEUP)

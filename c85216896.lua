@@ -1,5 +1,4 @@
 --セフィラ・メタトロン
----@param c Card
 function c85216896.initial_effect(c)
 	c:EnableReviveLimit()
 	aux.AddLinkProcedure(c,c85216896.matfilter,2)
@@ -71,7 +70,7 @@ function c85216896.rmtg(e,tp,eg,ep,ev,re,r,rp,chk,chkc)
 	Duel.SetOperationInfo(0,CATEGORY_REMOVE,g1,2,0,0)
 end
 function c85216896.rmop(e,tp,eg,ep,ev,re,r,rp)
-	local g=Duel.GetChainInfo(0,CHAININFO_TARGET_CARDS):Filter(Card.IsRelateToEffect,nil,e)
+	local g=Duel.GetTargetsRelateToChain():Filter(Card.IsAbleToRemove,nil)
 	if g:GetCount()~=2 then return end
 	if Duel.Remove(g,0,REASON_EFFECT+REASON_TEMPORARY)~=0 and g:IsExists(Card.IsLocation,1,nil,LOCATION_REMOVED) then
 		local og=Duel.GetOperatedGroup():Filter(Card.IsLocation,nil,LOCATION_REMOVED)

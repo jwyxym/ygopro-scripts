@@ -1,5 +1,4 @@
 --天霆號アーゼウス
----@param c Card
 function c90448279.initial_effect(c)
 	--xyz summon
 	aux.AddXyzProcedure(c,nil,12,2,c90448279.ovfilter,aux.Stringid(90448279,0),2,c90448279.xyzop)
@@ -30,7 +29,7 @@ function c90448279.initial_effect(c)
 	c:RegisterEffect(e2)
 	if not c90448279.global_check then
 		c90448279.global_check=true
-		local ge1=Effect.GlobalEffect()
+		local ge1=Effect.CreateEffect(c)
 		ge1:SetType(EFFECT_TYPE_FIELD+EFFECT_TYPE_CONTINUOUS)
 		ge1:SetCode(EVENT_BATTLED)
 		ge1:SetOperation(c90448279.checkop)

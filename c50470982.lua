@@ -1,5 +1,4 @@
 --運命の分かれ道
----@param c Card
 function c50470982.initial_effect(c)
 	--Activate
 	local e1=Effect.CreateEffect(c)
@@ -10,7 +9,6 @@ function c50470982.initial_effect(c)
 	e1:SetOperation(c50470982.activate)
 	c:RegisterEffect(e1)
 end
-c50470982.toss_coin=true
 function c50470982.target(e,tp,eg,ep,ev,re,r,rp,chk)
 	if chk==0 then return true end
 	Duel.SetOperationInfo(0,CATEGORY_COIN,nil,0,PLAYER_ALL,1)

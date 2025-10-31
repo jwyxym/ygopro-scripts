@@ -1,5 +1,4 @@
 --円融魔術
----@param c Card
 function c11827244.initial_effect(c)
 	--Activate
 	local e1=Effect.CreateEffect(c)
@@ -11,7 +10,6 @@ function c11827244.initial_effect(c)
 	e1:SetOperation(c11827244.activate)
 	c:RegisterEffect(e1)
 end
-c11827244.fusion_effect=true
 function c11827244.filter0(c)
 	return c:IsOnField() and c:IsAbleToRemove()
 end

@@ -1,5 +1,4 @@
 --六武衆の影－紫炎
----@param c Card
 function c1828513.initial_effect(c)
 	--xyz summon
 	aux.AddXyzProcedure(c,aux.FilterBoolFunction(Card.IsSetCard,0x103d),4,2)
@@ -24,7 +23,7 @@ function c1828513.cost(e,tp,eg,ep,ev,re,r,rp,chk)
 	e:GetHandler():RemoveOverlayCard(tp,1,1,REASON_COST)
 end
 function c1828513.filter(c)
-	return c:IsFaceup() and c:IsSetCard(0x103d) and c:IsAttackBelow(2000)
+	return c:IsFaceup() and c:IsSetCard(0x103d) and c:GetAttack()<2000
 end
 function c1828513.target(e,tp,eg,ep,ev,re,r,rp,chk,chkc)
 	if chkc then return chkc:IsLocation(LOCATION_MZONE) and chkc:IsControler(tp) and c1828513.filter(chkc) end

@@ -1,5 +1,4 @@
 --魔界台本「火竜の住処」
----@param c Card
 function c50179591.initial_effect(c)
 	--activate
 	local e1=Effect.CreateEffect(c)
@@ -73,7 +72,7 @@ end
 function c50179591.rmop2(e,tp,eg,ep,ev,re,r,rp)
 	local g=Duel.GetFieldGroup(tp,0,LOCATION_EXTRA)
 	if g:GetCount()==0 then return end
-	Duel.ConfirmCards(tp,g)
+	Duel.ConfirmCards(tp,g,true)
 	Duel.Hint(HINT_SELECTMSG,tp,HINTMSG_REMOVE)
 	local mg=g:FilterSelect(tp,Card.IsAbleToRemove,1,1,nil)
 	if mg:GetCount()>0 then

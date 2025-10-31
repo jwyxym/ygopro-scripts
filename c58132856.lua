@@ -1,5 +1,4 @@
 --トイ・マジシャン
----@param c Card
 function c58132856.initial_effect(c)
 	--Set
 	local e1=Effect.CreateEffect(c)
@@ -34,6 +33,7 @@ function c58132856.initial_effect(c)
 	e4:SetOperation(c58132856.desop)
 	c:RegisterEffect(e4)
 end
+c58132856.set_as_spell=true
 function c58132856.regop(e,tp,eg,ep,ev,re,r,rp)
 	local c=e:GetHandler()
 	if c:IsPreviousLocation(LOCATION_SZONE) and c:IsPreviousPosition(POS_FACEDOWN)

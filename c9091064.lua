@@ -1,6 +1,5 @@
 --VS 蛟龍
 local s,id,o=GetID()
----@param c Card
 function s.initial_effect(c)
 	--spsummon
 	--! needs an event to be raised for Duel.ConfirmCards, plus maybe a reason parameter
@@ -46,7 +45,9 @@ end
 function s.sptg(e,tp,eg,ep,ev,re,r,rp,chk)
 	local c=e:GetHandler()
 	if chk==0 then return Duel.GetLocationCount(tp,LOCATION_MZONE)>0
-		and c:IsCanBeSpecialSummoned(e,0,tp,false,false) end
+		and c:IsCanBeSpecialSummoned(e,0,tp,false,false)
+		and Duel.GetFlagEffect(tp,id)==0 end
+	Duel.RegisterFlagEffect(tp,id,RESET_CHAIN,0,1)
 	Duel.SetOperationInfo(0,CATEGORY_SPECIAL_SUMMON,c,1,0,0)
 end
 function s.spop(e,tp,eg,ep,ev,re,r,rp)

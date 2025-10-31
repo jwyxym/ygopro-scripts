@@ -1,5 +1,4 @@
 --氷結界の龍 ブリューナク
----@param c Card
 function c50321796.initial_effect(c)
 	--synchro summon
 	aux.AddSynchroProcedure(c,nil,aux.NonTuner(nil),1)
@@ -44,7 +43,7 @@ function c50321796.cost(e,tp,eg,ep,ev,re,r,rp,chk)
 	Duel.SendtoGrave(cg,REASON_COST+REASON_DISCARD)
 end
 function c50321796.target(e,tp,eg,ep,ev,re,r,rp,chk,chkc)
-	if chkc then return chkc:IsOnField() and chkc:IsAbleToHand() end
+	if chkc then return chkc:IsOnField() and chkc:IsControler(1-tp) and chkc:IsAbleToHand() end
 	if chk==0 then return Duel.IsExistingTarget(Card.IsAbleToHand,tp,0,LOCATION_ONFIELD,1,nil) end
 	local ct=e:GetLabel()
 	Duel.Hint(HINT_SELECTMSG,tp,HINTMSG_RTOHAND)

@@ -1,5 +1,4 @@
 --グラウンド・ゼノ
----@param c Card
 function c67523044.initial_effect(c)
 	--Activate
 	local e1=Effect.CreateEffect(c)
@@ -23,7 +22,6 @@ function c67523044.initial_effect(c)
 	e2:SetOperation(c67523044.fsop)
 	c:RegisterEffect(e2)
 end
-c67523044.fusion_effect=true
 function c67523044.filter(c)
 	return c:IsRace(RACE_DINOSAUR) and c:IsType(TYPE_TUNER+TYPE_NORMAL) and c:IsAbleToHand()
 end

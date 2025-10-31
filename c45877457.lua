@@ -1,5 +1,4 @@
 --魔鍵砲－ガレスヴェート
----@param c Card
 function c45877457.initial_effect(c)
 	c:EnableReviveLimit()
 	--different attr check
@@ -8,7 +7,7 @@ function c45877457.initial_effect(c)
 	e0:SetCode(EFFECT_MATERIAL_CHECK)
 	e0:SetValue(c45877457.valcheck)
 	c:RegisterEffect(e0)
-	 --atkup
+	--atkup
 	local e1=Effect.CreateEffect(c)
 	e1:SetType(EFFECT_TYPE_SINGLE)
 	e1:SetCode(EFFECT_UPDATE_ATTACK)

@@ -1,5 +1,4 @@
 --クシャトリラ・ユニコーン
----@param c Card
 function c68304193.initial_effect(c)
 	--special summon
 	local e1=Effect.CreateEffect(c)
@@ -73,7 +72,7 @@ function c68304193.rmtg(e,tp,eg,ep,ev,re,r,rp,chk)
 end
 function c68304193.rmop(e,tp,eg,ep,ev,re,r,rp)
 	local g=Duel.GetFieldGroup(tp,0,LOCATION_EXTRA)
-	Duel.ConfirmCards(tp,g)
+	Duel.ConfirmCards(tp,g,true)
 	Duel.Hint(HINT_SELECTMSG,tp,HINTMSG_REMOVE)
 	local sg=g:FilterSelect(tp,c68304193.rmfilter,1,1,nil,tp)
 	if #sg>0 then

@@ -1,5 +1,4 @@
 --暗黒界の登極
----@param c Card
 function c65956182.initial_effect(c)
 	--fusion summon
 	local e1=Effect.CreateEffect(c)
@@ -24,7 +23,6 @@ function c65956182.initial_effect(c)
 	e2:SetOperation(c65956182.thop)
 	c:RegisterEffect(e2)
 end
-c65956182.fusion_effect=true
 function c65956182.condition(e,tp,eg,ep,ev,re,r,rp)
 	return Duel.GetCurrentPhase()&(PHASE_MAIN1+PHASE_MAIN2)>0
 end

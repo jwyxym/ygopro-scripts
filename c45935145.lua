@@ -1,6 +1,5 @@
 --死祖の隷竜ウォロー
 local s,id,o=GetID()
----@param c Card
 function s.initial_effect(c)
 	--xyz summon
 	c:EnableReviveLimit()
@@ -99,7 +98,9 @@ function s.sptop(e,tp,eg,ep,ev,re,r,rp)
 	local tc=Duel.GetFirstTarget()
 	if not tc:IsRelateToEffect(e) then return end
 	if tc:IsType(TYPE_MONSTER) then
-		Duel.SpecialSummon(tc,0,tp,tp,false,false,POS_FACEUP+POS_FACEDOWN_DEFENSE)
+		if Duel.SpecialSummon(tc,0,tp,tp,false,false,POS_FACEUP+POS_FACEDOWN_DEFENSE)>0 and tc:IsFacedown() then
+			Duel.ConfirmCards(1-tp,tc)
+		end
 	else
 		Duel.SSet(tp,tc)
 	end

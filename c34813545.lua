@@ -1,5 +1,4 @@
 --ナチュルの春風
----@param c Card
 function c34813545.initial_effect(c)
 	--spsummon
 	local e1=Effect.CreateEffect(c)
@@ -29,7 +28,6 @@ function c34813545.initial_effect(c)
 	e3:SetOperation(c34813545.fsop)
 	c:RegisterEffect(e3)
 end
-c34813545.fusion_effect=true
 function c34813545.spfilter(c,e,tp)
 	return c:IsSetCard(0x2a) and c:IsCanBeSpecialSummoned(e,0,tp,false,false)
 end
@@ -92,7 +90,7 @@ function c34813545.filter2(c,e,tp,m,f,chkf)
 		and c:IsCanBeSpecialSummoned(e,SUMMON_TYPE_FUSION,tp,false,false) and c:CheckFusionMaterial(m,nil,chkf)
 end
 function c34813545.fcheck(tp,sg,fc)
-	return sg:IsExists(Card.IsSetCard,1,nil,0x2a)
+	return sg:IsExists(Card.IsFusionSetCard,1,nil,0x2a)
 end
 function c34813545.fstg(e,tp,eg,ep,ev,re,r,rp,chk)
 	if chk==0 then

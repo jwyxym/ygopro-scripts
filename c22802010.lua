@@ -1,5 +1,4 @@
 --無差別崩壊
----@param c Card
 function c22802010.initial_effect(c)
 	--Activate
 	local e1=Effect.CreateEffect(c)
@@ -11,7 +10,6 @@ function c22802010.initial_effect(c)
 	e1:SetOperation(c22802010.activate)
 	c:RegisterEffect(e1)
 end
-c22802010.toss_dice=true
 function c22802010.filter(c,lv)
 	return c:IsFaceup() and (c:IsLevelBelow(lv) or c:IsRankBelow(lv))
 end

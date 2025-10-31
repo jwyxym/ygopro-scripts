@@ -1,5 +1,4 @@
 --幽合－ゴースト・フュージョン
----@param c Card
 function c35705817.initial_effect(c)
 	--Activate
 	local e1=Effect.CreateEffect(c)
@@ -11,7 +10,6 @@ function c35705817.initial_effect(c)
 	e1:SetOperation(c35705817.activate)
 	c:RegisterEffect(e1)
 end
-c35705817.fusion_effect=true
 function c35705817.filter0(c)
 	return c:IsType(TYPE_MONSTER) and c:IsCanBeFusionMaterial() and c:IsAbleToRemove() and c:IsRace(RACE_ZOMBIE)
 end

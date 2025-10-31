@@ -1,5 +1,4 @@
 --擬態する人喰い虫
----@param c Card
 function c72427512.initial_effect(c)
 	--flip
 	local e1=Effect.CreateEffect(c)
@@ -47,7 +46,6 @@ function c72427512.desop(e,tp,eg,ep,ev,re,r,rp)
 			Duel.BreakEffect()
 			local e2=e1:Clone()
 			e2:SetCode(EFFECT_CHANGE_RACE)
-			e2:SetProperty(EFFECT_FLAG_COPY_INHERIT)
 			e2:SetValue(race)
 			c:RegisterEffect(e2)
 		end

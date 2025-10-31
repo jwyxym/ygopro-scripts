@@ -1,5 +1,4 @@
 --錬装融合
----@param c Card
 function c73594093.initial_effect(c)
 	--Activate
 	local e1=Effect.CreateEffect(c)
@@ -21,7 +20,6 @@ function c73594093.initial_effect(c)
 	e2:SetOperation(c73594093.tdop)
 	c:RegisterEffect(e2)
 end
-c73594093.fusion_effect=true
 function c73594093.filter1(c,e)
 	return not c:IsImmuneToEffect(e)
 end

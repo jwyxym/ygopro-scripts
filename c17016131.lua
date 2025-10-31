@@ -1,5 +1,4 @@
 --海造賊－誇示
----@param c Card
 function c17016131.initial_effect(c)
 	--activate
 	local e0=Effect.CreateEffect(c)
@@ -106,7 +105,7 @@ function c17016131.tgtg2(e,tp,eg,ep,ev,re,r,rp,chk)
 end
 function c17016131.tgop2(e,tp,eg,ep,ev,re,r,rp)
 	local g=Duel.GetFieldGroup(tp,0,LOCATION_EXTRA)
-	Duel.ConfirmCards(tp,g)
+	Duel.ConfirmCards(tp,g,true)
 	local tg=g:Filter(Card.IsAbleToGrave,nil)
 	Duel.Hint(HINT_SELECTMSG,tp,HINTMSG_TOGRAVE)
 	local tc=tg:Select(tp,1,1,nil):GetFirst()

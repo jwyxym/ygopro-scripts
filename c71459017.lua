@@ -1,5 +1,4 @@
 --禰須三破鳴比
----@param c Card
 function c71459017.initial_effect(c)
 	c:EnableCounterPermit(0x58)
 	--cannot be material
@@ -55,7 +54,6 @@ function c71459017.initial_effect(c)
 	e8:SetOperation(c71459017.diceop)
 	c:RegisterEffect(e8)
 end
-c71459017.toss_dice=true
 function c71459017.fuslimit(e,c,sumtype)
 	return sumtype&SUMMON_TYPE_FUSION==SUMMON_TYPE_FUSION
 end

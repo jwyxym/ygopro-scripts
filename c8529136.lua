@@ -1,6 +1,6 @@
 --スクラップ・フィスト
----@param c Card
 function c8529136.initial_effect(c)
+	aux.AddCodeList(c,60800381)
 	--Activate
 	local e1=Effect.CreateEffect(c)
 	e1:SetType(EFFECT_TYPE_ACTIVATE)

@@ -1,5 +1,4 @@
 --古聖戴サウラヴィス
----@param c Card
 function c4810828.initial_effect(c)
 	c:EnableReviveLimit()
 	--negate
@@ -55,7 +54,7 @@ function c4810828.discost(e,tp,eg,ep,ev,re,r,rp,chk)
 	Duel.SendtoHand(e:GetHandler(),nil,REASON_COST)
 end
 function c4810828.distg(e,tp,eg,ep,ev,re,r,rp,chk)
-	if chk==0 then return true end
+	if chk==0 then return Duel.IsPlayerCanRemove(tp) end
 	Duel.SetOperationInfo(0,CATEGORY_DISABLE_SUMMON,eg,eg:GetCount(),0,0)
 	Duel.SetOperationInfo(0,CATEGORY_REMOVE,eg,eg:GetCount(),0,0)
 end

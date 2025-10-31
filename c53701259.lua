@@ -1,5 +1,4 @@
 --覚醒の三幻魔
----@param c Card
 function c53701259.initial_effect(c)
 	aux.AddCodeList(c,6007213,32491822,69890967)
 	--Activate
@@ -55,7 +54,7 @@ function c53701259.initial_effect(c)
 	--remove
 	local e7=Effect.CreateEffect(c)
 	e7:SetType(EFFECT_TYPE_FIELD)
-	e7:SetProperty(EFFECT_FLAG_SET_AVAILABLE)
+	e7:SetProperty(EFFECT_FLAG_SET_AVAILABLE+EFFECT_FLAG_IGNORE_RANGE+EFFECT_FLAG_IGNORE_IMMUNE)
 	e7:SetCode(EFFECT_TO_GRAVE_REDIRECT)
 	e7:SetRange(LOCATION_SZONE)
 	e7:SetValue(LOCATION_REMOVED)

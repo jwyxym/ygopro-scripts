@@ -1,6 +1,5 @@
---Demigod of the Tistina
+--ティスティナの半神
 local s,id,o=GetID()
----@param c Card
 function s.initial_effect(c)
 	--spsummon
 	local e1=Effect.CreateEffect(c)

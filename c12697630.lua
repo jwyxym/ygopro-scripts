@@ -1,5 +1,4 @@
 --アーティファクト－ベガルタ
----@param c Card
 function c12697630.initial_effect(c)
 	--set
 	local e1=Effect.CreateEffect(c)
@@ -32,6 +31,7 @@ end
 function c12697630.spcon(e,tp,eg,ep,ev,re,r,rp)
 	local c=e:GetHandler()
 	return c:IsPreviousLocation(LOCATION_SZONE) and c:IsPreviousPosition(POS_FACEDOWN)
+		and c:IsPreviousControler(tp)
 		and c:IsReason(REASON_DESTROY) and Duel.GetTurnPlayer()~=tp
 end
 function c12697630.sptg(e,tp,eg,ep,ev,re,r,rp,chk)

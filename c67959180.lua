@@ -1,5 +1,4 @@
 --きまぐれの女神
----@param c Card
 function c67959180.initial_effect(c)
 	--dice
 	local e1=Effect.CreateEffect(c)
@@ -12,7 +11,6 @@ function c67959180.initial_effect(c)
 	e1:SetOperation(c67959180.operation)
 	c:RegisterEffect(e1)
 end
-c67959180.toss_coin=true
 function c67959180.target(e,tp,eg,ep,ev,re,r,rp,chk)
 	if chk==0 then return true end
 	Duel.SetOperationInfo(0,CATEGORY_COIN,nil,0,tp,1)

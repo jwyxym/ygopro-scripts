@@ -1,5 +1,4 @@
 --輝石融合
----@param c Card
 function c55824220.initial_effect(c)
 	--Activate
 	local e1=Effect.CreateEffect(c)
@@ -10,7 +9,6 @@ function c55824220.initial_effect(c)
 	e1:SetOperation(c55824220.activate)
 	c:RegisterEffect(e1)
 end
-c55824220.fusion_effect=true
 function c55824220.filter1(c,e)
 	return not c:IsImmuneToEffect(e)
 end

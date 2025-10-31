@@ -1,5 +1,4 @@
 --魔玩具融合
----@param c Card
 function c6077601.initial_effect(c)
 	--Activate
 	local e1=Effect.CreateEffect(c)
@@ -11,7 +10,6 @@ function c6077601.initial_effect(c)
 	e1:SetOperation(c6077601.activate)
 	c:RegisterEffect(e1)
 end
-c6077601.fusion_effect=true
 function c6077601.filter0(c)
 	return c:IsOnField() and c:IsAbleToRemove()
 end

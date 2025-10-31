@@ -1,5 +1,4 @@
 --凶導の葬列
----@param c Card
 function c60921537.initial_effect(c)
 	aux.AddCodeList(c,40352445,48654323)
 	local e1=aux.AddRitualProcGreater2(c,c60921537.filter,LOCATION_HAND+LOCATION_GRAVE,c60921537.grfilter,nil,true,c60921537.extraop)
@@ -28,8 +27,8 @@ function c60921537.extraop(e,tp,eg,ep,ev,re,r,rp,tc)
 			g=g1
 		else
 			g=g2
+			Duel.ConfirmCards(tp,g,true)
 		end
-		Duel.ConfirmCards(tp,g)
 		Duel.Hint(HINT_SELECTMSG,tp,HINTMSG_TOGRAVE)
 		local tg=g:FilterSelect(tp,Card.IsAbleToGrave,1,1,nil)
 		Duel.SendtoGrave(tg,REASON_EFFECT)

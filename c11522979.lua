@@ -1,5 +1,4 @@
 --CNo.69 紋章死神カオス・オブ・アームズ
----@param c Card
 function c11522979.initial_effect(c)
 	--xyz summon
 	aux.AddXyzProcedure(c,nil,5,4)
@@ -61,7 +60,7 @@ function c11522979.operation(e,tp,eg,ep,ev,re,r,rp)
 	local c=e:GetHandler()
 	local tc=Duel.GetFirstTarget()
 	if c:IsFaceup() and c:IsRelateToEffect(e) and tc:IsFaceup() and tc:IsRelateToEffect(e) then
-		local code=tc:GetCode()
+		local code=tc:GetOriginalCode()
 		local atk=tc:GetBaseAttack()
 		if atk<0 then atk=0 end
 		local e1=Effect.CreateEffect(c)

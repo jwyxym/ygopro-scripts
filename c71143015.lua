@@ -1,5 +1,4 @@
 --究極融合
----@param c Card
 function c71143015.initial_effect(c)
 	aux.AddCodeList(c,89631139,23995346)
 	--Activate
@@ -14,7 +13,6 @@ function c71143015.initial_effect(c)
 	e1:SetOperation(c71143015.activate)
 	c:RegisterEffect(e1)
 end
-c71143015.fusion_effect=true
 function c71143015.condition(e,tp,eg,ep,ev,re,r,rp)
 	local ph=Duel.GetCurrentPhase()
 	return ph==PHASE_MAIN1 or ph==PHASE_MAIN2
@@ -114,4 +112,3 @@ end
 function c71143015.cfilter(c)
 	return c:IsLocation(LOCATION_GRAVE) or (c:IsLocation(LOCATION_MZONE) and c:IsFaceup())
 end
-

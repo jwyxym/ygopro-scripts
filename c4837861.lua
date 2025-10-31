@@ -1,5 +1,4 @@
 --機皇神龍トリスケリア
----@param c Card
 function c4837861.initial_effect(c)
 	c:EnableReviveLimit()
 	--special summon
@@ -75,7 +74,7 @@ function c4837861.eqop(e,tp,eg,ep,ev,re,r,rp)
 	local c=e:GetHandler()
 	if Duel.GetLocationCount(tp,LOCATION_SZONE)<=0 or c:IsFacedown() or not c:IsRelateToEffect(e) then return end
 	local g=Duel.GetFieldGroup(tp,0,LOCATION_EXTRA)
-	Duel.ConfirmCards(tp,g)
+	Duel.ConfirmCards(tp,g,true)
 	Duel.Hint(HINT_SELECTMSG,tp,HINTMSG_EQUIP)
 	local sg=g:FilterSelect(tp,c4837861.eqfilter,1,1,nil,tp)
 	local tc=sg:GetFirst()
@@ -86,7 +85,7 @@ function c4837861.eqop(e,tp,eg,ep,ev,re,r,rp)
 			local e1=Effect.CreateEffect(c)
 			e1:SetType(EFFECT_TYPE_SINGLE)
 			e1:SetCode(EFFECT_EQUIP_LIMIT)
-			e1:SetProperty(EFFECT_FLAG_COPY_INHERIT+EFFECT_FLAG_OWNER_RELATE)
+			e1:SetProperty(EFFECT_FLAG_OWNER_RELATE)
 			e1:SetReset(RESET_EVENT+RESETS_STANDARD)
 			e1:SetValue(c4837861.eqlimit)
 			tc:RegisterEffect(e1)

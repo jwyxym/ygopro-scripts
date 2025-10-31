@@ -1,5 +1,4 @@
 --Aiラブ融合
----@param c Card
 function c59332125.initial_effect(c)
 	--Activate
 	local e1=Effect.CreateEffect(c)
@@ -11,7 +10,6 @@ function c59332125.initial_effect(c)
 	e1:SetOperation(c59332125.activate)
 	c:RegisterEffect(e1)
 end
-c59332125.fusion_effect=true
 function c59332125.filter1(c)
 	return c:IsFaceup() and c:IsType(TYPE_LINK) and c:IsCanBeFusionMaterial()
 end

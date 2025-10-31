@@ -1,5 +1,4 @@
 --烙印竜アルビオン
----@param c Card
 function c87746184.initial_effect(c)
 	--fusion material
 	c:EnableReviveLimit()
@@ -36,7 +35,6 @@ function c87746184.initial_effect(c)
 	e3:SetOperation(c87746184.thop)
 	c:RegisterEffect(e3)
 end
-c87746184.fusion_effect=true
 function c87746184.branded_fusion_check(tp,sg,fc)
 	return aux.gffcheck(sg,Card.IsFusionCode,68468459,Card.IsFusionAttribute,ATTRIBUTE_LIGHT)
 end

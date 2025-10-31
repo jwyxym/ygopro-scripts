@@ -1,5 +1,4 @@
 --黄金郷の七摩天
----@param c Card
 function c95034141.initial_effect(c)
 	--Activate
 	local e1=Effect.CreateEffect(c)
@@ -29,7 +28,6 @@ function c95034141.initial_effect(c)
 	e2:SetOperation(c95034141.alop)
 	c:RegisterEffect(e2)
 end
-c95034141.fusion_effect=true
 function c95034141.filter0(c)
 	return c:IsRace(RACE_ZOMBIE) and c:IsAbleToGrave()
 end

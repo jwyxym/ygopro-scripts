@@ -1,5 +1,4 @@
 --混沌の落とし穴
----@param c Card
 function c11593137.initial_effect(c)
 	--Activate(summon)
 	local e1=Effect.CreateEffect(c)
@@ -29,7 +28,7 @@ function c11593137.cost(e,tp,eg,ep,ev,re,r,rp,chk)
 	Duel.PayLPCost(tp,2000)
 end
 function c11593137.target(e,tp,eg,ep,ev,re,r,rp,chk)
-	if chk==0 then return true end
+	if chk==0 then return Duel.IsPlayerCanRemove(tp) end
 	local g=eg:Filter(c11593137.filter,nil)
 	Duel.SetOperationInfo(0,CATEGORY_DISABLE_SUMMON,g,g:GetCount(),0,0)
 	Duel.SetOperationInfo(0,CATEGORY_REMOVE,g,g:GetCount(),0,0)

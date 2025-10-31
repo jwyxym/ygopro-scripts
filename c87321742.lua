@@ -1,5 +1,4 @@
 --RR－ストラングル・レイニアス
----@param c Card
 function c87321742.initial_effect(c)
 	--self ss
 	local e1=Effect.CreateEffect(c)
@@ -60,7 +59,7 @@ function c87321742.mfilter(c)
 	return c:IsType(TYPE_XYZ) and c:IsAttribute(ATTRIBUTE_DARK)
 end
 function c87321742.ffilter(c)
-	return c:IsType(TYPE_XYZ) and c:GetOverlayGroup():IsExists(c87321742.mfilter,1,nil)
+	return c:IsType(TYPE_XYZ) and c:GetOverlayGroup():IsExists(c87321742.mfilter,1,nil) and c:IsFaceup()
 end
 function c87321742.spcon(e,tp,eg,ep,ev,re,r,rp)
 	return Duel.IsExistingMatchingCard(c87321742.ffilter,tp,LOCATION_MZONE,0,1,nil)

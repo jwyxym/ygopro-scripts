@@ -1,7 +1,7 @@
 --粉砕せし破壊神
 local s,id,o=GetID()
----@param c Card
 function s.initial_effect(c)
+	aux.AddCodeList(c,10000000)
 	--Activate
 	local e1=Effect.CreateEffect(c)
 	e1:SetDescription(aux.Stringid(id,0))

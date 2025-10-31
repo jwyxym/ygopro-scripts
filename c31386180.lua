@@ -1,5 +1,4 @@
 --始祖の守護者ティラス
----@param c Card
 function c31386180.initial_effect(c)
 	--xyz summon
 	aux.AddXyzProcedure(c,nil,5,2)
@@ -22,6 +21,7 @@ function c31386180.initial_effect(c)
 	e2:SetCode(EVENT_PHASE+PHASE_BATTLE)
 	e2:SetCountLimit(1)
 	e2:SetRange(LOCATION_MZONE)
+	e2:SetCondition(c31386180.decon)
 	e2:SetTarget(c31386180.destg)
 	e2:SetOperation(c31386180.desop)
 	c:RegisterEffect(e2)
@@ -38,6 +38,9 @@ function c31386180.initial_effect(c)
 end
 function c31386180.condition(e)
 	return e:GetHandler():GetOverlayCount()>0
+end
+function c31386180.decon(e,tp,eg,ep,ev,re,r,rp)
+	return e:GetHandler():GetBattledGroupCount()>0
 end
 function c31386180.destg(e,tp,eg,ep,ev,re,r,rp,chk,chkc)
 	if chkc then return chkc:IsControler(1-tp) and chkc:IsOnField() end

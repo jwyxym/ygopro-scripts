@@ -1,5 +1,4 @@
 --超量機獣エアロボロス
----@param c Card
 function c11646785.initial_effect(c)
 	aux.AddCodeList(c,85374678)
 	--xyz summon
@@ -70,7 +69,7 @@ function c11646785.setop(e,tp,eg,ep,ev,re,r,rp)
 	end
 end
 function c11646785.mtfilter(c,e)
-	return (c:IsLocation(LOCATION_HAND) or c:IsFaceup()) and c:IsSetCard(0x10dc) and c:IsCanOverlay() and not (e and c:IsImmuneToEffect(e))
+	return c:IsFaceupEx() and c:IsType(TYPE_MONSTER) and c:IsSetCard(0x10dc) and c:IsCanOverlay() and not (e and c:IsImmuneToEffect(e))
 end
 function c11646785.mttg(e,tp,eg,ep,ev,re,r,rp,chk)
 	if chk==0 then return e:GetHandler():IsType(TYPE_XYZ)

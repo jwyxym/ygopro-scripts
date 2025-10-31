@@ -1,5 +1,4 @@
 --海造賊－進水式
----@param c Card
 function c44227727.initial_effect(c)
 	--Activate
 	local e1=Effect.CreateEffect(c)
@@ -23,7 +22,6 @@ function c44227727.initial_effect(c)
 	e2:SetOperation(c44227727.eqop)
 	c:RegisterEffect(e2)
 end
-c44227727.fusion_effect=true
 function c44227727.filter1(c,e)
 	return not c:IsImmuneToEffect(e)
 end

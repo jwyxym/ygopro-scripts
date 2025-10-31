@@ -1,6 +1,5 @@
 --鉄獣式強襲機動兵装改“BucephalusⅡ”
 local s,id,o=GetID()
----@param c Card
 function s.initial_effect(c)
 	c:EnableReviveLimit()
 	--material
@@ -22,7 +21,7 @@ function s.initial_effect(c)
 	c:RegisterEffect(e2)
 	local e3=Effect.CreateEffect(c)
 	e3:SetType(EFFECT_TYPE_FIELD+EFFECT_TYPE_CONTINUOUS)
-	e3:SetRange(LOCATION_SZONE)
+	e3:SetRange(LOCATION_MZONE)
 	e3:SetCode(EVENT_CHAIN_END)
 	e3:SetOperation(s.limop2)
 	c:RegisterEffect(e3)

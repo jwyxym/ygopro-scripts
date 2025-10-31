@@ -1,6 +1,5 @@
---Storagepod
+--脚納母艦ブラキオーバー
 local s,id,o=GetID()
----@param c Card
 function s.initial_effect(c)
 	c:EnableReviveLimit()
 	--material
